@@ -22,38 +22,48 @@ The problem was developed with a classical planning approach, so predicates depi
 ### Problem Definition
 
 ### Domain
-In the current implementation, four PDDL files were created, one for the domain and three for the problem instances. The domain is composed of six actions, which make use of three types and six predicates. The types are:
-   
-1. tile - the tile type. It can take one value among the set (G, S, R, H, X), with X representing the ‘empty’ tile
-2. row - the row coordinate of the position of the tile on the board
-3. column - the column coordinate of the position of the tile on the board
+In the current implementation, four PDDL files were created, one for the domain and three for the problem instances. The domain is composed of six actions, which make use of three types and six predicates. 
 
+#### Types
+The types are:
+   
+1. _tile_ - the tile type. It can take one value among the set (G, S, R, H, X), with X representing the ‘empty’ tile
+2. _row_ - the row coordinate of the position of the tile on the board
+3. _column_ - the column coordinate of the position of the tile on the board
+
+#### Predicates
 The predicates are:
-1. tile_at ?row ?col ?tile - links the tile type ?tile to its row and column coordinates ?row
-?col
-2. adjacent-rows ?row1 ?row2 - whether the two rows ?row1 and ?row2 are adjacent
-3. adjacent-columns ?col1 ?col2 - whether the two columns ?col1 and ?col2 are adjacent
-4. movable ?tile - whether a tile type can be moved or not. This predicate was introduced as it is asked that the types S, G, R, H should move while the empty tile X should not
-5. empty ?tile - true if ?tile is the empty tile
-6. magically-disappears ?tile1 ?tile2 - This predicate links the two tiles ?tile1 and ?tile2. It is used to encode the required condition of S becoming ‘empty’ once switched with G for magical reasons and it is used within the swap-up-down-special and swap-left-right-special actions.
-The actions of the domain are the following:
-1. swap-up-down parameters (?col - col ?tile1 ?tile2 - tile ?row1 ?row2 - row)
+1. _tile_at_ ?row ?col ?tile - links the tile type ?tile to its row and column coordinates ?row ?col
+2. _adjacent-rows_ ?row1 ?row2 - whether the two rows ?row1 and ?row2 are adjacent
+3. _adjacent-columns_ ?col1 ?col2 - whether the two columns ?col1 and ?col2 are adjacent
+4. _movable_ ?tile - whether a tile type can be moved or not. This predicate was introduced as it is asked that the types S, G, R, H should move while the empty tile X should not
+5. _empty_ ?tile - true if ?tile is the empty tile
+6. _magically-disappears_ ?tile1 ?tile2 - This predicate links the two tiles ?tile1 and ?tile2. It is used to encode the required condition of S becoming ‘empty’ once switched with G for magical reasons and it is used within the swap-up-down-special and swap-left-right-special actions.  
+
+#### Actions
+The actions of the domain are the following: 
+1. _swap-up-down_ <br>
+parameters (?col - col ?tile1 ?tile2 - tile ?row1 ?row2 - row)<br>
 If two tiles ?tile1 ?tile2 are movable and are not the same tile type, have the same column coordinate ?col, have adjacent row coordinates ?row1 ?row2 and their types do not make true a (magically-disappear ?tile1 ?tile2) predicate, their row coordinates are swapped
 
- 2. swap-left-right parameters (?row1 - row ?tile1 ?tile2 - tile
-?col1 ?col2 - col)
+2. swap-left-right <br>
+parameters (?row1 - row ?tile1 ?tile2 - tile ?col1 ?col2 - col) <br>
 If two tiles ?tile1 ?tile2 are movable and are not the same tile type, have the same row coordinate ?row1, have adjacent column coordinates ?col1 ?col2 and their types do not make true a (magically-disappear ?tile1 ?tile2) predicate, their column coordinates are swapped
-3. swap-up-down-special parameters (?col1 - col ?tile1 ?tile2 - tile
-?row1 ?row2 - row ?empty - tile)
+
+3. swap-up-down-special <br>
+parameters (?col1 - col ?tile1 ?tile2 - tile ?row1 ?row2 - row ?empty - tile) <br>
 If two tiles ?tile1 ?tile2 are movable and are not the same tile type, have the same column coordinate ?col1, have adjacent row coordinates ?row1 ?row2 and make true a (magically-disappear ?tile1 ?tile2) predicate, then swap their row coordinates and and transform ?tile2 into the ‘empty’ tile X
-4. swap-left-right-special parameters (?row1 - row ?t1 ?t2 - tile
-?col1 ?col2 - col
-?empty - tile)
+
+4. swap-left-right-special <br>
+parameters (?row1 - row ?t1 ?t2 - tile ?col1 ?col2 - col ?empty - tile) <br>
 If two tiles ?tile1 ?tile2 are movable and are not the same tile type, have the same row coordinate ?row1, have adjacent column coordinates ?col1 ?col2 and make true a (magically-disappear ?tile1 ?tile2) predicate, then swap the column coordinates and transform ?tile2 into the ‘empty’ tile X
-5. match-three-row - parameters (?tile1 - tile ?r1 - row
-?c1 ?c2 ?c3 - col ?empty - tile)
+
+5. match-three-row <br> 
+parameters (?tile1 - tile ?r1 - row ?c1 ?c2 ?c3 - col ?empty - tile) <br>
 If three tiles of the same type ?t1 are not ‘empty’, have the same row coordinate ?row1, and their column coordinates ?col1 ?col2 ?col3 are adjacent two by two, then all three tiles are transformed into ‘empty’ tiles X
-6. match-three-column parameters (?t1 - tile ?col1 - col ?row1 ?row2 ?row3 - row ?empty - tile)
+
+6. match-three-column <br> 
+parameters (?t1 - tile ?col1 - col ?row1 ?row2 ?row3 - row ?empty - tile) <br>
 If three tiles of the same type ?t1 are not ‘empty’, have the same column coordinate ?col1 two by two have adjacent row coordinates and are not the ‘empty’ tile, then all three tiles are transformed into ‘empty’ tiles X
 
 ### Problem Instances
