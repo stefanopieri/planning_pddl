@@ -102,6 +102,34 @@ The instances are three:
 ### Fast Downward
 
 ## Analysis
+The solution plans are analyzed in the summary tables here below. To better understand the behaviour of the planners, some metrics were used. In particular, the metrics of interest are:
+- _solved_: if the problem was solved or not
+- _T(s)_: total planning time in seconds
+-  _Q_ - quality of the solution plan. It is measured as the number of actions required to solve the problem
+-  _Q ratio_ - the quantity Q/Q*, where Q is the quality of the solution plan found by the considered planner and Q* is the best plan found among all planners
+-  _Nodes expanded_
+-  _Nodes evaluated_
+
+### Problem 1
+
+|       | Solved | T(s)  | Q | Q ratio | Nodes expanded | Nodes evaluated |
+|-------|--------|-------|---|---------|----------------|-----------------|
+| ENHSP | yes    | 1.205 | 6 | 1.0     | 223            | 619             |
+| FD    | yes    | 0.006 | 6 | 1.0     | 9              | 52              |
+
+### Problem 2
+
+|       | Solved | T(s)   | Q  | Q ratio | Nodes expanded | Nodes evaluated |
+|-------|--------|--------|----|---------|----------------|-----------------|
+| ENHSP | yes    | 19.934 | 10 | 1.0     | 54189          | 146181          |
+| FD    | yes    | 0.214  | 10 | 1.0     | 1003           | 5367            |
+
+### Problem 3 
+
+|       | Solved | T(s)    | Q  | Q ratio | Nodes expanded | Nodes evaluated |
+|-------|--------|---------|----|---------|----------------|-----------------|
+| ENHSP | yes    | 167.845 | 11 | 1.0     | 378261         | 985296          |
+| FD    | yes    | 0.601   | 11 | 1.0     | 1454           | 10552           |
 
 ## Conclusions
 
