@@ -74,6 +74,27 @@ parameters (?t1 - tile ?col1 - col ?row1 ?row2 ?row3 - row ?empty - tile) <br>
 If three tiles of the same type ?t1 are not ‘empty’, have the same column coordinate ?col1 two by two have adjacent row coordinates and are not the ‘empty’ tile, then all three tiles are transformed into ‘empty’ tiles X
 
 ### Problem Instances
+In the current implementation, in each instance the goal state is to have the board composed only by _empty_ tiles.
+The instances are three:
+- 3x3 board
+
+|G H G|<br>
+|H H R|<br>
+|R R G|<br>
+
+- 4x3 board
+
+|G H G|<br>
+|H H S|<br>
+|S S G|<br>
+|R R R|<br>
+
+- 4x4 board
+
+|X S G H|<br>
+|S H G R|<br>
+|S H R G|<br>
+|H H H R|<br>
 
 ## Planners
 ### ENHSP
