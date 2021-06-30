@@ -162,10 +162,10 @@ Future developments could concern:
 - adding other domain rules
 
 ## References
-planning.domains
-https://gitlab.com/enricos83/ENHSP-Public
-https://github.com/aibasel/downward
-... work in progress
+planning.domains<br>
+https://gitlab.com/enricos83/ENHSP-Public<br>
+https://github.com/aibasel/downward<br>
+... work in progress ...
 
 ## Purpose
-... work in progress...
+... work in progress ...
