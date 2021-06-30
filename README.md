@@ -131,8 +131,26 @@ The solution plans are analyzed in the summary tables here below. To better unde
 | ENHSP | yes    | 167.845 | 11 | 1.0     | 378261         | 985296          |
 | FD    | yes    | 0.601   | 11 | 1.0     | 1454           | 10552           |
 
+It is possible to notice that both planners solved all instances, with the same plan quality. However, FD expands and evaluates far fewer nodes and takes way less time than ENHSP.
+
 ## Conclusions
+The project aims at developing a planning-based solution to the sliding-tile problem. 
+For such purpose, the domain file along with the problem instances were implemented in PDDL.
+
+The domain and problem instances were fed into two popular planners available in literature, namely ENHSP and Fast Downward.
+Results show that both planners were able to find solution plans of the same quality. However, there is a remarkable gap in performance between the two.
+In particular, Fast Downward outperformed ENHSP in planning time, nodex expanded and nodes evaluated.
+
+Some areas of this project could be explored more in depth. 
+Future developments could concern:
+- solving instances with a larger grid
+- evaluating correlation between the grid size and the quality metrics
+- comparing performance of more planners
+- changing the existing rules of the domain
+- adding other rules to the domain
 
 ## References
+... work in progress...
 
 ## Purpose
+... work in progress...
