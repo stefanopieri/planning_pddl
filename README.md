@@ -109,9 +109,9 @@ ENHSP was then launched in its optimal version, which makes use of A<sup>*</sup>
 ### Fast Downward
 FD was downloaded from the public Git repo (available at https://github.com/aibasel/downward) and it was built using the Cmake 3.19 GUI tool. As for ENHSP, the PDDL files were pasted inside the root folder in a folder called ‘assignment’. The planner was used with A<sup>*</sup> search along with landmark-cut heuristic. The launch commands are:
 
-./fast-downward.py pdd_files/domain.pddl pdd_files/prob1.pddl --search “astar(lmcut())” 
-./fast-downward.py pdd_files/domain.pddl pdd_files/prob2.pddl --search “astar(lmcut())” 
-./fast-downward.py pdd_files/domain.pddl pdd_files/prob3.pddl --search “astar(lmcut())”
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob1.pddl --search “astar(lmcut())”<br>
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob2.pddl --search “astar(lmcut())”<br>
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob3.pddl --search “astar(lmcut())”<br>
 
 ## Analysis
 The solution plans are analyzed in the summary tables here below. To better understand the behaviour of the planners, some metrics were used. In particular, the metrics of interest are:
