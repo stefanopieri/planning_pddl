@@ -143,11 +143,11 @@ In particular, Fast Downward outperformed ENHSP in planning time, nodex expanded
 
 Some areas of this project could be explored more in depth. 
 Future developments could concern:
-- solving instances with a larger grid
+- solving instances with larger grids
 - evaluating correlation between the grid size and the quality metrics
-- comparing performance of more planners
-- changing the existing rules of the domain
-- adding other rules to the domain
+- comparing the performance of more planners
+- changing the existing domain rules
+- adding other domain rules
 
 ## References
 ... work in progress...
