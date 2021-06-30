@@ -168,4 +168,6 @@ https://github.com/aibasel/downward<br>
 ... work in progress ...
 
 ## Purpose
-... work in progress ...
+This project was developed during the AI Planning module of the MSc course in Artificial Intelligence offered by University of Huddersfield. This project was not created for deployment into a production environment. Also, the software could contain bugs.
+
+
