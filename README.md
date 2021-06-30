@@ -22,11 +22,11 @@ The problem was developed with a classical planning approach, so predicates depi
 ### Problem Definition
 There is a board that contains tiles of different kinds, represented by letters. One of those is the _empty_ tile, represented by the X letter.
 The problem consists of finding a plan to reach a goal state from an initial state by swapping horizontally or vertically two adjacent tiles at a time. 
-There are some rules that must be followed. 
-Only two tile that are adjacent horizontally and vertically can be swapped. In such a case, the two tiles switch their coordinates.
-Not all kinds of tiles are movable and if one tile is not movable it cannot be swapped in any direction.
+To solve the problem, there are some rules that must be followed. 
+Only two tiles that are adjacent horizontally or vertically can be swapped. When they are swapped, the two tiles switch their coordinates.
+Not all kinds of tiles are movable; if one tile is not movable it cannot be swapped in any direction.
 Every time three tiles of the same type are aligned horizontally or vertically, all of them can be transformed into the _empty_ tile. 
-Lastly, there are some particular tile pairs. When two tiles of those are swapped, one of them is transformed into the _empty_ tile.
+Lastly, there are some particular tile pairs - named _special pairs_ for simplicity. When the tiles that compose a special pair is swapped, one tile of the two is transformed into the _empty_ tile.
 
 ### Domain
 In the current implementation, four PDDL files were created, one for the domain and three for the problem instances. The domain is composed of six actions, which make use of three types and six predicates. 
