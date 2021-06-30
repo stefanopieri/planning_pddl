@@ -98,8 +98,20 @@ The instances are three:
 
 ## Planners
 ### ENHSP
+ENHSP was cloned from the official Gitlab page (https://gitlab.com/enricos83/ENHSP-Public), it was compiled and installed by executing the ‘compile’ and ‘install’ files provided in the repository (./compile and ./install commands run in the root folder). The build generated the ‘enhsp’ executable, which was then called to launch the planner.
+The PDDL files were pasted in a folder called ‘assignment’ inside the root folder.
+ENHSP was then launched in its optimal version, which makes use of A<sup>*</sup> with h<sub>max</sub> heuristics and redundant constraints. To do so, the planner was run with the following commands in the root folder:
+
+./enhsp -o pdd_files/domain.pddl -f pdd_files/prob1.pddl -planner opt<br>
+./enhsp -o pdd_files/domain.pddl -f pdd_files/prob2.pddl -planner opt<br>
+./enhsp -o pdd_files/domain.pddl -f pdd_files/prob3.pddl -planner opt<br>
 
 ### Fast Downward
+FD was downloaded from the public Git repo (available at https://github.com/aibasel/downward) and it was built using the Cmake 3.19 GUI tool. As for ENHSP, the PDDL files were pasted inside the root folder in a folder called ‘assignment’. The planner was used with A<sup>*</sup> search along with landmark-cut heuristic. The launch commands are:
+
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob1.pddl --search “astar(lmcut())” 
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob2.pddl --search “astar(lmcut())” 
+./fast-downward.py pdd_files/domain.pddl pdd_files/prob3.pddl --search “astar(lmcut())”
 
 ## Analysis
 The solution plans are analyzed in the summary tables here below. To better understand the behaviour of the planners, some metrics were used. In particular, the metrics of interest are:
@@ -150,7 +162,10 @@ Future developments could concern:
 - adding other domain rules
 
 ## References
-... work in progress...
+planning.domains
+https://gitlab.com/enricos83/ENHSP-Public
+https://github.com/aibasel/downward
+... work in progress
 
 ## Purpose
 ... work in progress...
